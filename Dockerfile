@@ -7,7 +7,7 @@ RUN wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import - && \
 
 ENV SWIFT_BRANCH=development \
     SWIFT_PLATFORM=ubuntu14.04 \
-    SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2016-03-16-a
+    SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2016-03-24-a
 
 # Install Swift Ubuntu 14.04 Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
@@ -23,6 +23,3 @@ ENV PATH /usr/bin:$PATH
 
 # Print Installed Swift Version
 RUN swift --version
-
-# Fix https://bugs.swift.org/browse/SR-975
-ENV LD_LIBRARY_PATH=/usr/lib/swift/linux/:$LD_LIBRARY_PATH
