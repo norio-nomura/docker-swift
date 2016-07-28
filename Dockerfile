@@ -7,7 +7,7 @@ RUN wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import - && \
 
 ENV SWIFT_BRANCH=development \
     SWIFT_PLATFORM=ubuntu14.04 \
-    SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2016-07-25-a
+    SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2016-07-28-a
 
 # Install Swift Ubuntu 14.04 Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
