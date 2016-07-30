@@ -5,9 +5,9 @@ MAINTAINER Norio Nomura <norio.nomura@gmail.com>
 RUN wget -q -O - https://swift.org/keys/all-keys.asc | gpg --import - && \
     gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 
-ENV SWIFT_BRANCH=development \
+ENV SWIFT_BRANCH=swift-3.0-preview-3 \
     SWIFT_PLATFORM=ubuntu14.04 \
-    SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2016-07-29-a
+    SWIFT_VERSION=3.0-PREVIEW-3
 
 # Install Swift Ubuntu 14.04 Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
