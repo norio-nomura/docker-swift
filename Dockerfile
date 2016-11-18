@@ -1,13 +1,13 @@
-FROM norionomura/swift:base2
+FROM norionomura/swift:base3
 MAINTAINER Norio Nomura <norio.nomura@gmail.com>
 
 # Install Swift keys
 RUN curl https://swift.org/keys/all-keys.asc | gpg --import - && \
     gpg --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 
-ENV SWIFT_BRANCH=swift-3.0.1-release \
-    SWIFT_PLATFORM=ubuntu14.04 \
-    SWIFT_VERSION=3.0.1-RELEASE
+ENV SWIFT_BRANCH=swift-3.0.2-preview-1 \
+    SWIFT_PLATFORM=ubuntu16.04 \
+    SWIFT_VERSION=3.0.2-PREVIEW-1
 
 # Install Swift Ubuntu 14.04 Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
