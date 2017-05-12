@@ -1,4 +1,4 @@
-FROM norionomura/swift:base3
+FROM norionomura/swift:base4
 MAINTAINER Norio Nomura <norio.nomura@gmail.com>
 
 # Install Swift keys
@@ -9,7 +9,7 @@ ENV SWIFT_BRANCH=swift-3.0.2-release \
     SWIFT_PLATFORM=ubuntu16.04 \
     SWIFT_VERSION=3.0.2-RELEASE
 
-# Install Swift Ubuntu 14.04 Snapshot
+# Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     SWIFT_URL=https://swift.org/builds/$SWIFT_BRANCH/$(echo "$SWIFT_PLATFORM" | tr -d .)/swift-$SWIFT_VERSION/$SWIFT_ARCHIVE_NAME.tar.gz && \
     curl -O $SWIFT_URL && \
