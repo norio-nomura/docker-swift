@@ -16,6 +16,7 @@ RUN apt-get update && \
       libpython2.7-dev \
       libxml2 \
       python2.7 \
+      tzdata \
       uuid-dev \
       && \
     apt-get clean && \
