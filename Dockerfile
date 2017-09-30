@@ -8,6 +8,7 @@ RUN apt-get update && \
       clang \
       curl \
       git \
+      gnupg2 \
       libblocksruntime0 \
       libcurl4-openssl-dev \
       libedit2 \
