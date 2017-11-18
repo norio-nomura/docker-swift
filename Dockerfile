@@ -1,4 +1,4 @@
-FROM norionomura/swift:base5
+FROM norionomura/swift:base6
 MAINTAINER Norio Nomura <norio.nomura@gmail.com>
 
 # Install Swift keys
