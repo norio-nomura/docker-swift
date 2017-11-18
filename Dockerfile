@@ -12,9 +12,9 @@ RUN apt-get update && \
       libblocksruntime0 \
       libcurl4-openssl-dev \
       libedit2 \
-      libicu55 \
+      libicu-dev \
       libpython2.7-dev \
-      libxml2 \
+      libxml2-dev \
       python2.7 \
       tzdata \
       uuid-dev \
