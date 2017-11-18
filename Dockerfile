@@ -15,6 +15,7 @@ RUN apt-get update && \
       libicu-dev \
       libpython2.7-dev \
       libxml2-dev \
+      make \
       python2.7 \
       tzdata \
       uuid-dev \
