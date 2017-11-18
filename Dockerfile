@@ -13,7 +13,6 @@ RUN apt-get update && \
       libcurl4-openssl-dev \
       libedit2 \
       libicu55 \
-      libkqueue0 \
       libpython2.7-dev \
       libxml2 \
       python2.7 \
