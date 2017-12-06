@@ -5,9 +5,9 @@ MAINTAINER Norio Nomura <norio.nomura@gmail.com>
 RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import - && \
     gpg2 --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
 
-ENV SWIFT_BRANCH=swift-4.0.2-release \
+ENV SWIFT_BRANCH=swift-4.0.3-release \
     SWIFT_PLATFORM=ubuntu16.04 \
-    SWIFT_VERSION=4.0.2-RELEASE
+    SWIFT_VERSION=4.0.3-RELEASE
 
 # Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
