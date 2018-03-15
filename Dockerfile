@@ -16,6 +16,8 @@ RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     curl -O $SWIFT_URL.sig && \
     gpg2 --verify $SWIFT_ARCHIVE_NAME.tar.gz.sig && \
     tar -xvzf $SWIFT_ARCHIVE_NAME.tar.gz --directory / --strip-components=1 && \
+    apt-get update && \
+    apt-get install -yq libssl-dev pkg-config && \
     rm -rf $SWIFT_ARCHIVE_NAME* /tmp/* /var/tmp/*
 
 # Set Swift Path
