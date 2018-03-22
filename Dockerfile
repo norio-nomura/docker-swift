@@ -14,11 +14,14 @@ RUN apt-get update && \
       libedit2 \
       libicu-dev \
       libpython2.7-dev \
+      libssl-dev \
       libxml2-dev \
       make \
+      pkg-config \
       python2.7 \
       tzdata \
       uuid-dev \
+      zlib1g-dev \
       && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
