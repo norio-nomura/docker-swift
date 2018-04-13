@@ -16,7 +16,8 @@ RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     curl -O $SWIFT_URL.sig && \
     gpg2 --verify $SWIFT_ARCHIVE_NAME.tar.gz.sig && \
     tar -xvzf $SWIFT_ARCHIVE_NAME.tar.gz --directory / --strip-components=1 && \
-    rm -rf $SWIFT_ARCHIVE_NAME* /tmp/* /var/tmp/*
+    rm -rf $SWIFT_ARCHIVE_NAME* /tmp/* /var/tmp/* && \
+    chmod -R o+r /usr/lib/swift
 
 # Set Swift Path
 ENV PATH /usr/bin:$PATH
