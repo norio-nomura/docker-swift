@@ -7,7 +7,7 @@ RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import - && \
 
 ENV SWIFT_BRANCH=swift-4.1-branch \
     SWIFT_PLATFORM=ubuntu16.04 \
-    SWIFT_VERSION=4.1-DEVELOPMENT-SNAPSHOT-2018-05-30-a
+    SWIFT_VERSION=4.1-DEVELOPMENT-SNAPSHOT-2018-05-31-a
 
 # Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
