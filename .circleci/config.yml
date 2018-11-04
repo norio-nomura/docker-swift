@@ -19,10 +19,10 @@ jobs:
 
 workflows:
   version: 2
-  every_3_hours:
+  daily:
     triggers:
       - schedule:
-          cron: "40 0,3,6,9,12,15,18,21 * * *"
+          cron: "40 6 * * *"
           filters:
             branches:
               only:
