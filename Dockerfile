@@ -2,8 +2,7 @@ FROM norionomura/swift:base8
 MAINTAINER Norio Nomura <norio.nomura@gmail.com>
 
 # Install Swift keys
-RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import - && \
-    gpg2 --keyserver hkp://pool.sks-keyservers.net --refresh-keys Swift
+RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import -
 
 ENV SWIFT_BRANCH=swift-5.0-branch \
     SWIFT_PLATFORM=ubuntu16.04 \
