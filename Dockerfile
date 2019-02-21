@@ -6,7 +6,7 @@ RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import -
 
 ENV SWIFT_BRANCH=swift-5.0-branch \
     SWIFT_PLATFORM=ubuntu16.04 \
-    SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-02-19-a
+    SWIFT_VERSION=5.0-DEVELOPMENT-SNAPSHOT-2019-02-20-a
 
 # Install Swift Ubuntu Snapshot
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
