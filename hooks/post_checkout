@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# https://docs.docker.com/docker-cloud/builds/advanced/
+
+IFS="-" read -r -a TAG<<<"${SOURCE_BRANCH}"
+test ${#TAG[@]} -eq  3 || exit 1
+test "${TAG[0]}" == "pr" || exit 1
+
+sed -i "s|^    SWIFT_GITHUB_PR=.*$|    SWIFT_GITHUB_PR=${TAG[1]} \\\|" Dockerfile
+sed -i "s|^    SWIFT_CI_BUILD_NUMBER=.*$|    SWIFT_CI_BUILD_NUMBER=${TAG[2]} \\\|" Dockerfile
+sed -i "s|^    SWIFT_VERSION=.*$|    SWIFT_VERSION=PR-${TAG[1]}-${TAG[2]}|" Dockerfile
+
+exit $?

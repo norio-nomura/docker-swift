@@ -7,6 +7,10 @@ function add_tag() {
   docker push $DOCKER_REPO:$1
 }
 
-add_tag latest
+IFS="-" read -r -a TAG<<<"${SOURCE_BRANCH}"
+test ${#TAG[@]} -eq  3 || exit 1
+test "${TAG[0]}" == "pr" || exit 1
+
+add_tag pr-${TAG[1]}
 
 exit $?
