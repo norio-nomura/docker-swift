@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  test:
+    machine: true
+    steps:
+      - checkout
+      - run: docker build -t baseimage -f Dockerfile .
+      - run: docker build -t swift5 -f Dockerfile.swift5 .
+      - run: |
+          git clone https://github.com/jpsim/SourceKitten.git -b swift-5.0
+          cd SourceKitten
+          docker run -v `pwd`:`pwd` -w `pwd` --rm swift5 swift build --build-tests
+      - run: |
+          git clone https://github.com/apple/swift-nio-ssl.git -b 2.0.0
+          cd swift-nio-ssl
+          docker run -v `pwd`:`pwd` -w `pwd` --rm swift5 swift build --build-tests
+      - run: |
+          git clone https://github.com/apple/swift-nio-extras.git -b 1.0.0
+          cd swift-nio-extras
+          docker run -v `pwd`:`pwd` -w `pwd` --rm swift5 swift build --build-tests
+
+workflows:
+  tests:
+    jobs:
+      - test
