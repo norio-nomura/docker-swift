@@ -1,30 +1,30 @@
-FROM ubuntu:16.04
-MAINTAINER Norio Nomura <norio.nomura@gmail.com>
+FROM ubuntu:18.04
+LABEL maintainer="Norio Nomura <norio.nomura@gmail.com>"
+LABEL description="A base image to reduce overall capacity when using multiple images provided by norionomura/swift"
 
 # Install Dependencies
 
 RUN apt-get update && \
-    apt-get install -y \
-      clang \
+    DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true apt-get install -y \
+      binutils \
       curl \
       git \
       gnupg2 \
-      libblocksruntime0 \
-      libcurl4-openssl-dev \
+      libatomic1 \
+      libbsd0 \
+      libc6 \
+      libcurl4 \
       libedit2 \
-      libicu-dev \
-      libpython2.7-dev \
-      libssl-dev \
-      libxml2-dev \
+      libgcc1 \
+      libpython2.7 \
+      libstdc++6 \
+      libuuid1 \
+      libxml2 \
       make \
       pkg-config \
       python2.7 \
       tzdata \
-      uuid-dev \
       zlib1g-dev \
       && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    LLVM_VERSION=`cd /usr/bin; ls llvm-config-*|sed 's/llvm-config-//'` && \
-    (cd /usr/bin; ls -1 llvm*-$LLVM_VERSION) | sed -e '/llvm-config/d' -e "s/-$LLVM_VERSION//" | \
-    awk -v LLVM_VERSION=$LLVM_VERSION 'BEGIN{print "update-alternatives --force --install /usr/bin/llvm-config llvm-config /usr/bin/llvm-config-"LLVM_VERSION" 200 \\"}{print "--slave /usr/bin/"$0, $0, "/usr/bin/"$0"-"LLVM_VERSION" \\" }' | sh
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
