@@ -12,6 +12,7 @@ jobs:
       - run: |
             git config --global user.name "Norio Nomura"
             git config --global user.email "norio.nomura@gmail.com"
+            git fetch --tags
       - run: docker-swift-updater -Verbose YES
       - run: |
             git push origin $CIRCLE_BRANCH
