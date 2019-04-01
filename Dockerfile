@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 LABEL maintainer="Norio Nomura <norio.nomura@gmail.com>"
 LABEL description="A base image to reduce overall capacity when using multiple images provided by norionomura/swift"
 
@@ -13,7 +13,7 @@ RUN apt-get update && \
       libatomic1 \
       libbsd0 \
       libc6 \
-      libcurl4 \
+      libcurl3 \
       libedit2 \
       libgcc1 \
       libpython2.7 \
