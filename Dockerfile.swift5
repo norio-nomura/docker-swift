@@ -5,7 +5,7 @@ LABEL maintainer="Norio Nomura <norio.nomura@gmail.com>"
 RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import -
 
 ENV SWIFT_BRANCH=swift-5.0-release \
-    SWIFT_PLATFORM=ubuntu18.04 \
+    SWIFT_PLATFORM=ubuntu16.04 \
     SWIFT_VERSION=5.0-RELEASE
 
 # Install Swift Ubuntu Snapshot
