@@ -15,7 +15,6 @@ RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
     curl -O $SWIFT_URL.sig && \
     gpg2 --verify $SWIFT_ARCHIVE_NAME.tar.gz.sig && \
     tar -xvzf $SWIFT_ARCHIVE_NAME.tar.gz --directory / --strip-components=1 && \
-    LIB_CLANG=/usr/lib/clang/7.0.0 && diff -r $LIB_CLANG /usr/lib/lldb/clang && rm -rf /usr/lib/lldb/clang && ln -sfr $LIB_CLANG /usr/lib/lldb/clang && \
     rm -rf $SWIFT_ARCHIVE_NAME* /tmp/* /var/tmp/* && \
     chmod -R o+r /usr/lib/swift
 
