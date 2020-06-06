@@ -6,7 +6,7 @@ RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import -
 
 ENV SWIFT_BRANCH=swift-5.3-branch \
     SWIFT_PLATFORM=ubuntu16.04 \
-    SWIFT_VERSION=5.3-DEVELOPMENT-SNAPSHOT-2020-06-04-a
+    SWIFT_VERSION=5.3-DEVELOPMENT-SNAPSHOT-2020-06-05-a
 
 # Install Swift toolchain for ubuntu
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
