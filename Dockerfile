@@ -4,9 +4,9 @@ LABEL maintainer="Norio Nomura <norio.nomura@gmail.com>"
 # Install Swift keys
 RUN curl https://swift.org/keys/all-keys.asc | gpg2 --import -
 
-ENV SWIFT_BRANCH=swift-5.3.2-release \
+ENV SWIFT_BRANCH=swift-5.4-branch \
     SWIFT_PLATFORM=ubuntu16.04 \
-    SWIFT_VERSION=5.3.2-RELEASE
+    SWIFT_VERSION=5.4-DEVELOPMENT-SNAPSHOT-2021-01-11-a
 
 # Install Swift toolchain for ubuntu
 RUN SWIFT_ARCHIVE_NAME=swift-$SWIFT_VERSION-$SWIFT_PLATFORM && \
