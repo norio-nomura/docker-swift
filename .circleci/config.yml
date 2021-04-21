@@ -27,6 +27,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - swift-5.5-branch
     jobs:
       - docker-swift-updater
